@@ -1,56 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
-
-    <!--TODO Thanveer : Design the list_item CardView for forums-->
-    <com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    style="@style/Widget.MaterialComponents.CardView">
+    <!--TODO Thanveer : Design the list_item for project catalogue-->
+    <!--ref:
+        https://in.pinterest.com/pin/6544361936816272/
+        https://material.io/components/cards/
+    -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="7dp"
-        app:cardElevation="7dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="12dp"
-        android:layout_marginLeft="7dp"
-        android:layout_marginRight="7dp">
+        android:layout_height="120dp"
+        android:background="@drawable/project_list_item_background">
         <LinearLayout
+            android:id="@+id/forum_item"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-<!--            <FrameLayout-->
-<!--                android:id="@+id/forum_bar_list_item"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="3dp"-->
-<!--                android:background="@color/color1"/>-->
-            <!--        placeholder for image       -->
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/forum_bar_list_item"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:background="@color/colorSecondaryVariant"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_launcher_foreground"/>
-            <LinearLayout
-                android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:id="@+id/forum_title_list_item"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="7dp">
-                <TextView
-                    android:id="@+id/forum_title_list_item"
-                    android:textSize="20sp"
+                android:text="Lunacy"
+                android:textStyle="bold"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="24sp">
+            </TextView>
+            <TextView
+                android:id="@+id/forum_description_list_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lunacy"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="18sp">
+            </TextView>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@id/project_chips"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="7dp"
-                    android:textAppearance="?attr/textAppearanceListItem" />
-                <TextView
-                    android:id="@+id/forum_description_list_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="7dp"
-                    android:textAppearance="?attr/textAppearanceListItem" />
-            </LinearLayout>
+                    android:layout_marginTop="1dp"
+                    app:singleLine="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="android"
+                        app:chipBackgroundColor="#000000"
+                        app:chipStrokeColor="#000000"
+                        app:chipStrokeWidth="2dp"
+                        android:textColor="#FFFFFF"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="django"
+                        app:chipBackgroundColor="#000000"
+                        app:chipStrokeColor="#000000"
+                        app:chipStrokeWidth="2dp"
+                        android:textColor="#FFFFFF"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="java"
+                        app:chipBackgroundColor="#000000"
+                        app:chipStrokeColor="#000000"
+                        app:chipStrokeWidth="2dp"
+                        android:textColor="#FFFFFF" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kotlin"
+                        app:chipBackgroundColor="#000000"
+                        app:chipStrokeColor="#000000"
+                        app:chipStrokeWidth="2dp"
+                        android:textColor="#FFFFFF" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="firebase"
+                        app:chipBackgroundColor="#000000"
+                        app:chipStrokeColor="#000000"
+                        app:chipStrokeWidth="2dp"
+                        android:textColor="#FFFFFF"/>
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </HorizontalScrollView>
         </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-</LinearLayout>
+        <FrameLayout
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/forum_list_item_icon_background"
+            android:layout_alignRight="@id/forum_item">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_event_list_item"/>
+        </FrameLayout>
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

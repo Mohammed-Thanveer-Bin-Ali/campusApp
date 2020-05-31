@@ -12,12 +12,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/event_list_item_background">
         <!--        placeholder for image       -->
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorSecondaryVariant">
+            android:layout_height="160dp"
+            android:background="@drawable/event_list_iten_icon_background">
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_margin="33dp"
                 android:layout_width="50dp"
@@ -26,20 +27,31 @@
                 android:layout_gravity="center|center_vertical"
                 />
         </FrameLayout>
-        <TextView
-            android:id="@+id/event_title_list_item"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            android:layout_margin="@dimen/text_margin"
-            android:textAppearance="?attr/textAppearanceListItem" />
+            android:orientation="vertical"
+            android:layout_margin="2dp">
 
-        <TextView
-            android:id="@+id/event_description_list_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-            android:textAppearance="?attr/textAppearanceListItem" />
+            <TextView
+                android:id="@+id/event_title_list_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="Name"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/event_description_list_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/text_margin"
+                android:text="Subtitle"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="18sp" />
+        </LinearLayout>
+
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

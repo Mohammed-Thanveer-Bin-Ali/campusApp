@@ -5,11 +5,7 @@
         android:enabled="true"
         android:visible="true"
         android:checkableBehavior="single">
-        <item android:id="@+id/forum_menu"
-            android:title="Forum"
-            android:icon="@drawable/ic_bab_forums"
-            android:checkable="true"
-            app:showAsAction="always"/>
+
 
         <item android:id="@+id/project_menu"
             app:showAsAction="always"
@@ -22,5 +18,11 @@
             app:showAsAction="always"
             android:checkable="true"
             android:icon="@drawable/ic_bab_events"/>
+
+        <item android:id="@+id/forum_menu"
+            android:title="Forum"
+            android:icon="@drawable/ic_bab_forums"
+            android:checkable="true"
+            app:showAsAction="always"/>
     </group>
 </menu>

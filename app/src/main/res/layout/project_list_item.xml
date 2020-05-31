@@ -2,10 +2,10 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="120dp"
     android:orientation="vertical"
     android:layout_margin="5dp"
-    app:cardCornerRadius="9dp"
+    app:cardCornerRadius="10dp"
     app:cardElevation="3dp"
     style="@style/Widget.MaterialComponents.CardView">
     <!--TODO Thanveer : Design the list_item for project catalogue-->
@@ -17,39 +17,105 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@drawable/project_list_item_background">
         <!--        placeholder for image       -->
         <FrameLayout
             android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:background="@color/colorSecondaryVariant">
+            android:background="@drawable/project_ilist_item_icon_background">
             <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_event_list_item"/>
         </FrameLayout>
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="20dp">
-
+            android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
             <TextView
                 android:id="@+id/project_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:textSize="20sp"
-                android:text="@string/app_name"
-                android:textAppearance="?attr/textAppearanceListItem" />
+                android:text="Lunacy"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/project_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceListItem" />
+                android:text="Software"
+                android:textAppearance="?attr/textAppearanceListItem"
+                android:textSize="18sp"
+                android:layout_below="@id/project_title"/>
 
-        </LinearLayout>
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/project_description">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@id/project_chips"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    app:singleLine="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="android"
+                        app:chipBackgroundColor="#000000"
+                        app:chipStrokeColor="#000000"
+                        app:chipStrokeWidth="2dp"
+                        android:textColor="#FFFFFF"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="django"
+                        app:chipBackgroundColor="#000000"
+                        app:chipStrokeColor="#000000"
+                        app:chipStrokeWidth="2dp"
+                        android:textColor="#FFFFFF"/>
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="java"
+                        app:chipBackgroundColor="#000000"
+                        app:chipStrokeColor="#000000"
+                        app:chipStrokeWidth="2dp"
+                        android:textColor="#FFFFFF" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="kotlin"
+                        app:chipBackgroundColor="#000000"
+                        app:chipStrokeColor="#000000"
+                        app:chipStrokeWidth="2dp"
+                        android:textColor="#FFFFFF" />
+
+                    <com.google.android.material.chip.Chip
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="firebase"
+                        app:chipBackgroundColor="#000000"
+                        app:chipStrokeColor="#000000"
+                        app:chipStrokeWidth="2dp"
+                        android:textColor="#FFFFFF"/>
+
+                </com.google.android.material.chip.ChipGroup>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>
